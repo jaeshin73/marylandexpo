@@ -1,0 +1,39 @@
+body{margin:0;background:#F4F6F8;}
+a{color:#003B5C}a:hover{color:#007681}
+html{scroll-behavior:smooth}
+.nav-scroll::-webkit-scrollbar{display:none}
+.mdx-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.mdx-track{display:flex;gap:16px;width:max-content;animation:mdx-scroll 45s linear infinite}
+.mdx-marquee:hover .mdx-track,.mdx-marquee:focus-within .mdx-track{animation-play-state:paused}
+@keyframes mdx-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.mdx-track{animation:none}.mdx-marquee{overflow-x:auto}}
+
+/* --- static-site additions --- */
+body[data-lang="ko"] .only-en{display:none!important}
+body:not([data-lang="ko"]) .only-ko{display:none!important}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid #9BDAF9;outline-offset:2px}
+.cat-tab{min-height:44px;padding:0 18px;border-radius:999px;cursor:pointer;font:inherit;font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px;border:1.5px solid var(--c);background:#fff;color:var(--c)}
+.cat-tab .dot{width:10px;height:10px;border-radius:5px;background:var(--c)}
+.cat-tab .cnt{opacity:.8;font-weight:500}
+.cat-tab[aria-selected="true"]{background:var(--c);color:#fff}
+.cat-tab[aria-selected="true"] .dot{background:#fff}
+.cat-tab[data-cat="all"] .dot{display:none}
+.lang-btn{min-height:38px;min-width:44px;padding:0 10px;border:0;border-radius:6px;cursor:pointer;font:inherit;font-size:13px;font-weight:700;background:transparent;color:#fff}
+.lang-btn[aria-pressed="true"]{background:#fff;color:#003B5C}
+#blood-modal{position:fixed;inset:0;z-index:50}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+@media (max-width:760px){
+  .hdr-inner{gap:0 12px!important;min-height:56px!important;padding:0 16px!important}
+  .hdr-logo{order:1;padding:10px 0!important}
+  .hdr-logo img{height:20px!important}
+  .hdr-actions{order:2;margin-left:auto;padding:6px 0!important;flex-wrap:nowrap!important}
+  .hdr-cta{display:none!important}
+  .nav-scroll{order:3;flex:1 1 100%!important;margin:0 -16px;padding:0 8px 6px}
+  .nav-scroll a{padding:8px 10px!important;font-size:14px!important}
+  .lang-btn{min-width:32px;min-height:36px;padding:0 5px;font-size:11px}
+}
+
+a[data-reg]{transition:transform .15s ease,filter .15s ease}
+a[data-reg]:hover{transform:translateY(-1px);filter:brightness(1.08)}
